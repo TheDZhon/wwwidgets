@@ -1,0 +1,4 @@
+Makefile*
+doc/html/*
+doc/qch/*
+translations/*.qm
