@@ -21,12 +21,17 @@ unix:QMAKE_CXXFLAGS_RELEASE -= -g
 unix:LIBS += -L../widgets
 
 win32 {
-    CONFIG(release): LIBS += -L../widgets/release
-#   CONFIG(debug): LIBS += -L../widgets/debug 
+    CONFIG(release): LIBS += -L../widgets/release -lwwwidgets$$QT_MAJOR_VERSION
+#   CONFIG(debug): LIBS += -L../widgets/debug  
 }
 
-qtAddLibrary(wwwidgets$$QT_MAJOR_VERSION)
+equals ($$QT_MAJOR_VERSION, 5) {
+	qtAddModule(wwwidgets$$QT_MAJOR_VERSION)
+}
 
+equals ($$QT_MAJOR_VERSION, 4) {
+	qtAddLibrary(wwwidgets$$QT_MAJOR_VERSION)
+}
 
 # install
 target.path = $$[QT_INSTALL_PLUGINS]/designer

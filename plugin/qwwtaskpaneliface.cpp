@@ -23,6 +23,7 @@
 #include <QChildEvent>
 #include <QMainWindow>
 #include <QMenuBar>
+#include <QObject>
 
 #include "wwwidgets.h"
 // #include "propertymatcher.h"
@@ -41,7 +42,7 @@ QWidget * QwwTaskPanelIface::createWidget(QWidget * parent) {
     QwwTaskPanel *panel = new QwwTaskPanel(parent);
     connect(panel, SIGNAL(currentIndexChanged(int)),
             this, SLOT(currentIndexChanged(int)));
-    QWidget *w = qFindChild<QWidget*>(panel, "ww_taskpanel_panel");
+    QWidget* w = panel->findChild<QWidget*>("ww_taskpanel_panel");
     if (w) {
         w->installEventFilter(this);
     }

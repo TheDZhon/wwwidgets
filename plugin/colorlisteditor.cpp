@@ -21,7 +21,7 @@
 #include <QFile>
 
 
-ColorListEditor::ColorListEditor(QWidget* parent, Qt::WFlags fl)
+ColorListEditor::ColorListEditor(QWidget* parent, Qt::WindowFlags fl)
         : QDialog( parent, fl ) {
     setupUi(this);
     loadColorMaps();

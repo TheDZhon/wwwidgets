@@ -25,7 +25,7 @@ class ColorListEditor : public QDialog, private Ui::ColorListEditor
   Q_OBJECT
 
 public:
-  ColorListEditor(QWidget* parent = 0, Qt::WFlags fl = 0 );
+  ColorListEditor(QWidget* parent = 0, Qt::WindowFlags fl = 0 );
   ~ColorListEditor();
   /*$PUBLIC_FUNCTIONS$*/
     ColorModel *colorModel() const;
