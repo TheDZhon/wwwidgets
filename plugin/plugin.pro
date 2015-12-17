@@ -13,7 +13,14 @@ FORMS += about.ui colorlisteditor.ui
 
 TEMPLATE = lib
 TARGET = wwwidgetsplugin
-CONFIG += plugin designer warn_on release
+CONFIG += plugin warn_on release
+
+greaterThan(QT_MAJOR_VERSION, 4) {
+	QT += designer
+} else {
+	CONFIG += designer
+}
+
 CONFIG -= debug
 # deps
 
@@ -25,11 +32,9 @@ win32 {
 #   CONFIG(debug): LIBS += -L../widgets/debug  
 }
 
-equals ($$QT_MAJOR_VERSION, 5) {
+greaterThan(QT_MAJOR_VERSION, 4) {
 	qtAddModule(wwwidgets$$QT_MAJOR_VERSION)
-}
-
-equals ($$QT_MAJOR_VERSION, 4) {
+} else {
 	qtAddLibrary(wwwidgets$$QT_MAJOR_VERSION)
 }
 
