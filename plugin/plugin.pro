@@ -33,9 +33,10 @@ win32 {
 }
 
 greaterThan(QT_MAJOR_VERSION, 4) {
+	#FIXME(DZhon): rewrite this ugly stuff
 	LIBS += -L../widgets -l:libwwwidgets$${QT_MAJOR_VERSION}.so.1.0.0
 } else {
-	qtAddModule(wwwidgets$$QT_MAJOR_VERSION)
+	qtAddLibrary(wwwidgets$$QT_MAJOR_VERSION)
 }
 
 # install
