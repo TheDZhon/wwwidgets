@@ -1,9 +1,12 @@
 INCLUDEPATH += $$[QT_INSTALL_HEADERS]/wwWidgets
 
-qtAddLibrary(wwwidgets$$QT_MAJOR_VERSION)
+greaterThan(QT_MAJOR_VERSION, 4) {
+	LIBS += -lwwwidgets$$QT_MAJOR_VERSION
+} else {
+	qtAddLibrary(wwwidgets$$QT_MAJOR_VERSION)
+}
 
 DEFINES += WWWIDGETS
 DEFINES -= NO_WWWIDGETS
 WW_VERSION = 1.0.0
 message( Welcome to wwWidgets ($$WW_VERSION) )
-

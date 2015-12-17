@@ -7,9 +7,7 @@ win32 {
 QT += widgets
 
 TEMPLATE = subdirs
-SUBDIRS += widgets plugin
-
-#SUBDIRS += examples
+SUBDIRS += widgets plugin examples
 
 DISTFILES += wwwidgets_utils.pri logo.png wwWidgets.prf
 
