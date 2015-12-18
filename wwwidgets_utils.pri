@@ -28,20 +28,12 @@ wwwidgets_install_mkspecs {
     INSTALLS += mkspecs
 }
 
-unix {
-    UI_DIR = .ui
-    MOC_DIR = .moc
-    RCC_DIR = .obj
-    OBJECTS_DIR = .obj
-    VERSION = 1.0.0
-}
+UI_DIR = .ui
+MOC_DIR = .moc
+RCC_DIR = .obj
+OBJECTS_DIR = .obj
 
-#win32 {
-#    UI_DIR = ui
-#    MOC_DIR = moc
-#    RCC_DIR = obj
-#    OBJECTS_DIR = obj
-#}
+VERSION = 1.0.0
 
 include(widgets.pri)
 
