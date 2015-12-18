@@ -1,0 +1,3 @@
+PROJECT (wwwidgets${QTAPI})
+
+
